@@ -32,40 +32,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="welcome"
+            android:text="Welcome"
             android:textColor="@color/black"
             android:textSize="25sp"
+            android:layout_marginStart="20dp"
+
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="24dp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/UsernameTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="User name"
+            android:text="Student name"
+            android:layout_marginStart="20dp"
             android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="normal"
+            android:textSize="24sp"
+            android:textAllCaps="true"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="72dp" />
 
         <TextView
+            android:id="@+id/UserEmailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="186380307057@paruluniversity.ac.in"
+            android:layout_marginStart="20dp"
+
+            android:text="user@testuser.com"
             android:textColor="@color/black"
             android:textSize="18sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="32dp"
             tools:layout_editor_absoluteY="114dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/UserPhoneNumberTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="9825720827"
+            android:text="9822******"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:layout_marginStart="20dp"
+
             android:textColor="@color/black"
             android:textSize="18sp"
             tools:ignore="MissingConstraints"
@@ -182,7 +196,7 @@
             android:layout_width="340dp"
             android:layout_height="150dp"
             android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/cardView3"
+            app:layout_constraintBottom_toTopOf="@+id/EventCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -197,11 +211,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Addtendence"
+                    android:layout_marginEnd="82dp"
+                    android:text="Attendance"
                     android:textColor="@color/black"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.353" />
@@ -210,16 +226,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="171dp"
                     android:text="75%"
-                    android:textColor="@color/black"
 
+                    android:textColor="@color/black"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
                 <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="84dp"
                     android:layout_height="83dp"
                     android:layout_marginEnd="28dp"
@@ -234,7 +253,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
+            android:id="@+id/EventCard"
             android:layout_width="340dp"
             android:layout_height="150dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -242,6 +261,7 @@
             tools:layout_editor_absoluteY="621dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/card_backagroud">
@@ -251,15 +271,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginEnd="137dp"
                     android:text="Events"
                     android:textColor="@color/black"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:id="@+id/imageView2"
                     android:layout_width="84dp"
                     android:layout_height="83dp"
                     android:layout_marginEnd="28dp"

@@ -1,31 +1,38 @@
 package com.example.student_app
 
+import android.content.ContentValues.TAG
+import android.media.metrics.Event
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [home_page.newInstance] factory method to
- * create an instance of this fragment.
- */
 class home_page : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var UsernameTextView : TextView
+    lateinit var UserPhoneTextView : TextView
+    lateinit var UserEmailTextView : TextView
+
+    lateinit var name: String
+    lateinit var email: String
+    lateinit var phonenumber : String
+    lateinit var Eventcard : CardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -33,27 +40,49 @@ class home_page : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view : View = inflater.inflate(R.layout.fragment_home_page, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        UsernameTextView = view.findViewById(R.id.UsernameTextview)
+        UserPhoneTextView = view.findViewById(R.id.UserPhoneNumberTextView)
+        UserEmailTextView = view.findViewById(R.id.UserEmailTextView)
+        val db = FirebaseFirestore.getInstance()
+        val user = Firebase.auth.currentUser
+        if (user != null)
+        {
+            // User is signed in
+            val userid = user.uid
+            val data = db.collection("Students").document(userid)
+            data.get().addOnSuccessListener {
+                 name = it["Name"].toString()
+                 email = it["Email"].toString()
+                 phonenumber = it["MobileNumber"].toString()
+
+                UsernameTextView.setText(name)
+                UserEmailTextView.setText(email)
+                UserPhoneTextView.setText(phonenumber)
+
+
+            }
+
+        }
+        else
+        {
+            // No user is signed in
+        }
+
+
+
+        Eventcard = view.findViewById(R.id.EventCard)
+        Eventcard.setOnClickListener {
+            view.findNavController().navigate(R.id.eventFragment)
+
+
+        }
+
+
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment home_page.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            home_page().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

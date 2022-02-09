@@ -11,21 +11,21 @@
         android:label="fragment_login_page"
         tools:layout="@layout/fragment_login_page" >
         <action
-            android:id="@+id/action_login_page_to_register_page"
-            app:destination="@id/register_page" />
-    </fragment>
-    <fragment
-        android:id="@+id/register_page"
-        android:name="com.example.student_app.register_page"
-        android:label="fragment_register_page"
-        tools:layout="@layout/fragment_register_page" >
-        <action
-            android:id="@+id/action_register_page_to_home_page"
+            android:id="@+id/action_login_page_to_home_page"
             app:destination="@id/home_page" />
     </fragment>
     <fragment
         android:id="@+id/home_page"
         android:name="com.example.student_app.home_page"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_home_page_to_eventFragment"
+            app:destination="@id/eventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.student_app.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" />
 </navigation>
