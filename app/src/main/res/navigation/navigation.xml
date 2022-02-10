@@ -22,10 +22,18 @@
         <action
             android:id="@+id/action_home_page_to_eventFragment"
             app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_home_page_to_chat_Fragment"
+            app:destination="@id/chat_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/eventFragment"
         android:name="com.example.student_app.EventFragment"
         android:label="fragment_event"
         tools:layout="@layout/fragment_event" />
+    <fragment
+        android:id="@+id/chat_Fragment"
+        android:name="com.example.student_app.chat_Fragment"
+        android:label="fragment_chat_"
+        tools:layout="@layout/fragment_chat_" />
 </navigation>

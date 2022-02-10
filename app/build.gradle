@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'com.chaquo.python'
 
 }
 
@@ -16,6 +17,27 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a","x86_64"
+        }
+
+        python {
+            buildPython "C:/Users/MIRAGE/AppData/Local/Programs/Python/Python38"
+
+        }
+
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
+
+        python{
+            pip{
+                install "nltk"
+            }
+        }
     }
 
     buildTypes {
@@ -86,8 +108,7 @@ dependencies {
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:8.0.0'
 
-
-
+    implementation 'com.github.samsao:messageui:1.0.0'
 
 
 }
