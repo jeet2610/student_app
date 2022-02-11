@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_home_page_to_chat_Fragment"
             app:destination="@id/chat_Fragment" />
+        <action
+            android:id="@+id/action_home_page_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventFragment"
@@ -36,4 +39,9 @@
         android:name="com.example.student_app.chat_Fragment"
         android:label="fragment_chat_"
         tools:layout="@layout/fragment_chat_" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.student_app.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

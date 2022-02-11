@@ -1,19 +1,18 @@
 package com.example.student_app
 
 import android.content.ContentValues.TAG
-import android.media.metrics.Event
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
+
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -29,10 +28,12 @@ class home_page : Fragment() {
     lateinit var email: String
     lateinit var phonenumber : String
     lateinit var Eventcard : CardView
+    lateinit var ResultCard : CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
 
         }
@@ -48,7 +49,10 @@ class home_page : Fragment() {
         UserPhoneTextView = view.findViewById(R.id.UserPhoneNumberTextView)
         UserEmailTextView = view.findViewById(R.id.UserEmailTextView)
         ChatImageView = view.findViewById(R.id.ChatImageButton)
-
+        ResultCard = view.findViewById(R.id.ResultCardView)
+        ResultCard.setOnClickListener{
+            view.findNavController().navigate(R.id.resultFragment)
+        }
 
 
 
@@ -87,10 +91,11 @@ class home_page : Fragment() {
 
         }
 
-
+        ChatImageView.setOnClickListener{
+            view.findNavController().navigate(R.id.chat_Fragment)
+        }
 
         return view
     }
-
 
 }

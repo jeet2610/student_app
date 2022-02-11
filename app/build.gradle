@@ -23,7 +23,7 @@ android {
         }
 
         python {
-            buildPython "C:/Users/MIRAGE/AppData/Local/Programs/Python/Python38"
+            buildPython "C:/Python39/python.exe"
 
         }
 
