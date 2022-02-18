@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1001472238446",
-    "project_id": "student-app-f8ebf",
-    "storage_bucket": "student-app-f8ebf.appspot.com"
+    "project_number": "223449033232",
+    "project_id": "student-app-ef539",
+    "storage_bucket": "student-app-ef539.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1001472238446:android:c2c665ed9f6d59ef80577f",
+        "mobilesdk_app_id": "1:223449033232:android:755602768e9f71f208b895",
         "android_client_info": {
           "package_name": "com.example.student_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1001472238446-u1vs61m5ij8ib77f7m98e0gmllkfca4l.apps.googleusercontent.com",
+          "client_id": "223449033232-kt6s16d328so5f0m49o5hiocv7bg6les.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCT8osTrjhk1vb5V8_VABJkg9BkNXcKJiY"
+          "current_key": "AIzaSyDIcqXrrqjtfLubuK3-suOYTmeLZei6C1Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1001472238446-u1vs61m5ij8ib77f7m98e0gmllkfca4l.apps.googleusercontent.com",
+              "client_id": "223449033232-kt6s16d328so5f0m49o5hiocv7bg6les.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
